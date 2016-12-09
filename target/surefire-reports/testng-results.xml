@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="org.fundacion.pivotal.CreateProjectTest" duration-ms="24375" started-at="2016-12-09T23:27:05Z" finished-at="2016-12-09T23:27:29Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="24375" started-at="2016-12-09T23:27:05Z" finished-at="2016-12-09T23:27:29Z">
+      <class name="org.fundacion.pivotal.CreateProjectTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:org.fundacion.pivotal.CreateProjectTest@6b2fad11]" name="setup" is-config="true" duration-ms="8679" started-at="2016-12-09T19:27:05Z" finished-at="2016-12-09T19:27:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="testCreateProject()[pri:0, instance:org.fundacion.pivotal.CreateProjectTest@6b2fad11]" name="testCreateProject" duration-ms="14287" started-at="2016-12-09T19:27:13Z" finished-at="2016-12-09T19:27:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateProject -->
+        <test-method status="PASS" signature="close()[pri:0, instance:org.fundacion.pivotal.CreateProjectTest@6b2fad11]" name="close" is-config="true" duration-ms="1399" started-at="2016-12-09T19:27:28Z" finished-at="2016-12-09T19:27:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- org.fundacion.pivotal.CreateProjectTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- org.fundacion.pivotal.CreateProjectTest -->
+</testng-results>
