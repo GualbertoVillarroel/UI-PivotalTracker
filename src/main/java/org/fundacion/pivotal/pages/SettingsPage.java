@@ -31,12 +31,13 @@ public class SettingsPage {
     deleteBtn.click();
   }
 
-  public void deleteProject() {
+  public HomePage deleteProject() {
     //Move the scrollView until delete is visible
     JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
     jsExecutor.executeScript("arguments[0].scrollIntoView();", deleteLnk);
 
     clickDeleteLnk();
     clickDeleteBtn();
+    return new HomePage(driver);
   }
 }

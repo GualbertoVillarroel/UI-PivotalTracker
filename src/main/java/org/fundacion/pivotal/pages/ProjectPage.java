@@ -31,4 +31,5 @@ public class ProjectPage {
     settingsMenuItem.click();
     return new SettingsPage(driver);
   }
+
 }

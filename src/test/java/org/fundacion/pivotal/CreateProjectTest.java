@@ -4,7 +4,7 @@ import static org.testng.Assert.assertEquals;
 
 import java.util.concurrent.TimeUnit;
 
-import org.fundacion.pivotal.pages.CreateProjectPage;
+import org.fundacion.pivotal.pages.NewProjectPage;
 import org.fundacion.pivotal.pages.HomePage;
 import org.fundacion.pivotal.pages.LoginPage;
 import org.fundacion.pivotal.pages.ProjectPage;
@@ -13,9 +13,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 
@@ -35,25 +37,19 @@ public class CreateProjectTest {
   public void testCreateProject() {
 
     LoginPage login = new LoginPage(driver);
-    login.setUserName("gualy_vc@hotmail.com");
-    login.clickContinue();
-    login.setPassword("password123");
-    HomePage home = login.clickSubmit();
+    HomePage home = login.logintoPivotalTracker("gualy_vc@hotmail.com", "password123");
 
-    CreateProjectPage newProject = home.clickCreateProject();
-
-    newProject.setProjectName("AutomateTest");
-    newProject.clickAccountDropDownList();
-    newProject.clickSelectAnAccount();
-    //project.clickCreateAccount();
-    //project.setAccountName("Selenium");
-
-    ProjectPage project = newProject.clickCreate();
+    NewProjectPage newProject = home.clickCreateProject();
+    ProjectPage project = newProject.createNewProjectPivotalTracker("AutomateTest");
     assertEquals(project.getTitleProject(), "AutomateTest");
 
     //Deleting the project
     SettingsPage settings = project.clickSettings();
-    settings.deleteProject();
+    home = settings.deleteProject();
+
+    WebDriverWait wait = new WebDriverWait(driver, 20);
+    wait.until(ExpectedConditions.visibilityOf(home.getTitleLogo()));
+
   }
 
   @AfterClass

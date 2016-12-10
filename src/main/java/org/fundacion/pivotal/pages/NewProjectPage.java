@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 
-public class CreateProjectPage {
+public class NewProjectPage {
 
   WebDriver driver;
 
@@ -29,7 +29,7 @@ public class CreateProjectPage {
   @FindBy(css = "input.tc-account-creator__name")
   WebElement accountName;
 
-  public CreateProjectPage(WebDriver driver) {
+  public NewProjectPage(WebDriver driver) {
     this.driver = driver;
     AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver, 100);
     PageFactory.initElements(factory, this);
@@ -55,8 +55,15 @@ public class CreateProjectPage {
     accountName.sendKeys(name);
   }
 
-  public ProjectPage clickCreate() {
+  public void clickCreate() {
     createBtn.click();
+  }
+
+  public ProjectPage createNewProjectPivotalTracker(String projectName){
+    setProjectName(projectName);
+    clickAccountDropDownList();
+    clickSelectAnAccount();
+    clickCreate();
     return new ProjectPage(this.driver);
   }
 

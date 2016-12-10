@@ -11,6 +11,9 @@ public class HomePage {
 
   private WebDriver driver;
 
+  @FindBy(css = "div.tc_header_text_logo")
+  WebElement titleLogo;
+
   @FindBy(css = ".button.button--actionButton")
   WebElement createProjectBtn;
 
@@ -20,9 +23,13 @@ public class HomePage {
     PageFactory.initElements(factory, this);
   }
 
-  public CreateProjectPage clickCreateProject() {
+  public NewProjectPage clickCreateProject() {
     createProjectBtn.click();
-    return new CreateProjectPage(this.driver);
+    return new NewProjectPage(this.driver);
+  }
+
+  public WebElement getTitleLogo(){
+    return titleLogo;
   }
 
 

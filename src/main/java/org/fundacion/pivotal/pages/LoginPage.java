@@ -43,8 +43,15 @@ public class LoginPage {
     continueBtn.click();
   }
 
-  public HomePage clickSubmit() {
+  public void clickSubmit() {
     submitBtn.click();
+  }
+
+  public HomePage logintoPivotalTracker(String userName, String password){
+    setUserName(userName);
+    clickContinue();
+    setPassword(password);
+    clickSubmit();
     return new HomePage(driver);
   }
 
