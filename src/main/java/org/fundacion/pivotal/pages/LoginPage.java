@@ -47,7 +47,13 @@ public class LoginPage {
     submitBtn.click();
   }
 
-  public HomePage logintoPivotalTracker(String userName, String password){
+  /**
+   * Login to Pivotal Tracker page.
+   * @param userName valid user to login Pivotal
+   * @param password valid password to login Pivotal
+   * @return an instance of HomePage
+   */
+  public HomePage loginPivotalTracker(String userName, String password) {
     setUserName(userName);
     clickContinue();
     setPassword(password);

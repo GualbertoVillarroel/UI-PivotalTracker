@@ -23,14 +23,13 @@ public class HomePage {
     PageFactory.initElements(factory, this);
   }
 
-  public NewProjectPage clickCreateProject() {
+  public CreateProjectPage clickCreateProject() {
     createProjectBtn.click();
-    return new NewProjectPage(this.driver);
+    return new CreateProjectPage(this.driver);
   }
 
-  public WebElement getTitleLogo(){
+  public WebElement getTitleLogo() {
     return titleLogo;
   }
-
 
 }

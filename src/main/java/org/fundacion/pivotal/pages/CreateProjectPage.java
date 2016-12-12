@@ -1,5 +1,6 @@
 package org.fundacion.pivotal.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 
-public class NewProjectPage {
+public class CreateProjectPage {
 
   WebDriver driver;
 
@@ -20,16 +21,10 @@ public class NewProjectPage {
   @FindBy(css = "div.tc-account-selector__header")
   WebElement accountSelectotDdb;
 
-  @FindBy(css = ".tc-account-selector__option-account-name")
-  WebElement accountSelector;
+  @FindBy(css = "div.tc-account-selector__options")
+  WebElement selector;
 
-  @FindBy(css = "div.tc-account-selector__create-account-icon")
-  WebElement createAccountIconBtn;
-
-  @FindBy(css = "input.tc-account-creator__name")
-  WebElement accountName;
-
-  public NewProjectPage(WebDriver driver) {
+  public CreateProjectPage(WebDriver driver) {
     this.driver = driver;
     AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver, 100);
     PageFactory.initElements(factory, this);
@@ -43,26 +38,25 @@ public class NewProjectPage {
     accountSelectotDdb.click();
   }
 
-  public void clickSelectAnAccount() {
-    accountSelector.click();
-  }
-
-  public void clickCreateAccount() {
-    createAccountIconBtn.click();
-  }
-
-  public void setAccountName(String name) {
-    accountName.sendKeys(name);
+  public void selectAccount(String accountName) {
+    WebElement account = selector.findElement(By.xpath("//div[text()= '" + accountName + "']"));
+    account.click();
   }
 
   public void clickCreate() {
     createBtn.click();
   }
 
-  public ProjectPage createNewProjectPivotalTracker(String projectName){
+  /**
+   * Create a new project.
+   * @param projectName name of the project to be created
+   * @param accountName acoount with witch the project will be created
+   * @return an instance of ProjectPage
+   */
+  public ProjectPage createNewProject(String projectName, String accountName) {
     setProjectName(projectName);
     clickAccountDropDownList();
-    clickSelectAnAccount();
+    selectAccount(accountName);
     clickCreate();
     return new ProjectPage(this.driver);
   }
