@@ -41,15 +41,14 @@ public class ModifyProjectTest {
 
     //Create a new project using "ProjectName" and "AccountName"
     String projectName = "TestName";
-    ProjectPage project = newProject.createNewProject(projectName, "Jala");
+    String accountName = "Jala";
+    ProjectPage project = newProject.createNewProject(projectName, accountName);
 
     //Change the name of the project
     String projectNameChanged = "TestNameChanged";
     SettingsPage settings = project.clickSettings();
     settings.editProjectName(projectNameChanged);
-    assertTrue(driver.findElement(By.xpath(
-            ".//*[@id='shared_header']/div/div/header/ul/li[2]/div/h1/a/div[text() ='"
-            + projectNameChanged + "']")).isDisplayed(),
+    assertTrue(driver.findElement(settings.getTitleProject(projectNameChanged)).isDisplayed(),
             "Error the name of the project is different.");
 
 
