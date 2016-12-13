@@ -3,6 +3,7 @@
     <test name="PivotalTrackerTest">
         <classes>
             <class name="org.fundacion.pivotal.CreateProjectTest"/>
+            <class name="org.fundacion.pivotal.ModifyProjectTest"/>
         </classes>
     </test>
 </suite>

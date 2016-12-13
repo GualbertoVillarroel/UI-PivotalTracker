@@ -23,7 +23,7 @@ public class ProjectPage {
     PageFactory.initElements(factory, this);
   }
 
-    public String getTitleProject() {
+  public String getTitleProject() {
     return titleProject.getText();
   }
 

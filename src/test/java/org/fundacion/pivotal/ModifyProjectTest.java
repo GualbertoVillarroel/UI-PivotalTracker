@@ -1,26 +1,27 @@
 package org.fundacion.pivotal;
 
+import static org.testng.Assert.assertTrue;
+
 import java.util.concurrent.TimeUnit;
 
-import org.fundacion.pivotal.pages.*;
+import org.fundacion.pivotal.pages.CreateProjectPage;
+import org.fundacion.pivotal.pages.HomePage;
+import org.fundacion.pivotal.pages.LoginPage;
 import org.fundacion.pivotal.pages.ProjectPage;
+import org.fundacion.pivotal.pages.SettingsPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
 
 public class ModifyProjectTest {
   WebDriver driver;
 
-  @BeforeClass
+  @BeforeTest
   public void setup() {
     System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
     driver = new ChromeDriver();
@@ -39,22 +40,24 @@ public class ModifyProjectTest {
     CreateProjectPage newProject = home.clickCreateProject();
 
     //Create a new project using "ProjectName" and "AccountName"
-    String projectName = "AutomateTest";
+    String projectName = "TestName";
     ProjectPage project = newProject.createNewProject(projectName, "Jala");
 
     //Change the name of the project
     String projectNameChanged = "TestNameChanged";
     SettingsPage settings = project.clickSettings();
     settings.editProjectName(projectNameChanged);
-    assertTrue(driver.findElement(By.xpath(".//*[@id='shared_header']/div/div/header/ul/li[2]/div/h1/a/div[text() ='"
-            + projectNameChanged + "']")).isDisplayed(), "Error the name of the project is different.");
+    assertTrue(driver.findElement(By.xpath(
+            ".//*[@id='shared_header']/div/div/header/ul/li[2]/div/h1/a/div[text() ='"
+            + projectNameChanged + "']")).isDisplayed(),
+            "Error the name of the project is different.");
 
 
     //Deleting the project
     settings.deleteProject();
   }
 
-  @AfterClass
+  @AfterTest
   public void close() {
     driver.quit();
   }

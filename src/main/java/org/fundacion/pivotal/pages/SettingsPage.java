@@ -50,7 +50,9 @@ public class SettingsPage {
   }
 
   public By getTitleProject(String projectName) {
-    By titleProject = By.xpath(".//*[@id='shared_header']/div/div/header/ul/li[2]/div/h1/a/div[text() ='" + projectName + "']");
+    By titleProject = By.xpath(
+            ".//*[@id='shared_header']/div/div/header/ul/li[2]/div/h1/a/div[text() ='"
+            + projectName + "']");
     return titleProject;
   }
 
@@ -80,9 +82,5 @@ public class SettingsPage {
 
     WebDriverWait wait = new WebDriverWait(driver, 20);
     wait.until(ExpectedConditions.visibilityOfElementLocated(getTitleProject(projectName)));
-
-
-    //@FindBy(xpath = ".//*[@id='shared_header']/div/div/header/ul/li[2]/div/h1/a/div[text() =\"TestNameChanged\"]")
-
   }
 }
