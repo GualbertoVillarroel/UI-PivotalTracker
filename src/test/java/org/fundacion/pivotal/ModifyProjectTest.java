@@ -1,21 +1,15 @@
 package org.fundacion.pivotal;
 
-import static org.testng.Assert.assertTrue;
-
-import java.util.concurrent.TimeUnit;
-
-import org.fundacion.pivotal.pages.CreateProjectPage;
-import org.fundacion.pivotal.pages.HomePage;
-import org.fundacion.pivotal.pages.LoginPage;
-import org.fundacion.pivotal.pages.ProjectPage;
-import org.fundacion.pivotal.pages.SettingsPage;
-import org.openqa.selenium.By;
+import org.fundacion.pivotal.pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import java.util.concurrent.TimeUnit;
+
+import static org.testng.Assert.assertTrue;
 
 
 public class ModifyProjectTest {
@@ -23,8 +17,14 @@ public class ModifyProjectTest {
 
   @BeforeTest
   public void setup() {
-    System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
+    //Windows
+    //System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
+
+    //MacOS
+    System.setProperty("webdriver.chrome.driver", "/Users/GualyVc/IntelliJ/chromedriver");
+
     driver = new ChromeDriver();
+
     driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     driver.manage().window().maximize();
     driver.get("https://www.pivotaltracker.com/signin");

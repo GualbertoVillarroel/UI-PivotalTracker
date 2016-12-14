@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="PivotalTrackerTest"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="18,184">
+  <properties />
+  
+  
+            <testcase name="testCreateProject" time="18,184" classname="org.fundacion.pivotal.ModifyProjectTest" />
+      
+</testsuite>
