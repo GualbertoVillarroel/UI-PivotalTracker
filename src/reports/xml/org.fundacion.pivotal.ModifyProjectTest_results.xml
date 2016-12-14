@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="23,900">
+           time="20.051">
   <properties />
   
   
-            <testcase name="testCreateProject" time="23,900" classname="org.fundacion.pivotal.CreateProjectTest" />
+            <testcase name="testCreateProject" time="20.051" classname="org.fundacion.pivotal.ModifyProjectTest" />
       
 </testsuite>

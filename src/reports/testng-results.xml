@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="48730" started-at="2016-12-14T14:32:02Z" finished-at="2016-12-14T14:32:51Z">
+    <groups>
+    </groups>
+    <test name="PivotalTrackerTest" duration-ms="48730" started-at="2016-12-14T14:32:02Z" finished-at="2016-12-14T14:32:51Z">
+      <class name="org.fundacion.pivotal.CreateProjectTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:org.fundacion.pivotal.CreateProjectTest@146ba0ac]" name="setup" is-config="true" duration-ms="7601" started-at="2016-12-14T10:32:02Z" finished-at="2016-12-14T10:32:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:org.fundacion.pivotal.ModifyProjectTest@6a41eaa2]" name="setup" is-config="true" duration-ms="5196" started-at="2016-12-14T10:32:10Z" finished-at="2016-12-14T10:32:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="testCreateProject()[pri:0, instance:org.fundacion.pivotal.CreateProjectTest@146ba0ac]" name="testCreateProject" duration-ms="14512" started-at="2016-12-14T10:32:15Z" finished-at="2016-12-14T10:32:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateProject -->
+        <test-method status="PASS" signature="close()[pri:0, instance:org.fundacion.pivotal.CreateProjectTest@146ba0ac]" name="close" is-config="true" duration-ms="747" started-at="2016-12-14T10:32:50Z" finished-at="2016-12-14T10:32:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+        <test-method status="PASS" signature="close()[pri:0, instance:org.fundacion.pivotal.ModifyProjectTest@6a41eaa2]" name="close" is-config="true" duration-ms="613" started-at="2016-12-14T10:32:50Z" finished-at="2016-12-14T10:32:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- org.fundacion.pivotal.CreateProjectTest -->
+      <class name="org.fundacion.pivotal.ModifyProjectTest">
+        <test-method status="PASS" signature="testCreateProject()[pri:0, instance:org.fundacion.pivotal.ModifyProjectTest@6a41eaa2]" name="testCreateProject" duration-ms="20051" started-at="2016-12-14T10:32:30Z" finished-at="2016-12-14T10:32:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateProject -->
+      </class> <!-- org.fundacion.pivotal.ModifyProjectTest -->
+    </test> <!-- PivotalTrackerTest -->
+  </suite> <!-- Suite -->
+</testng-results>
