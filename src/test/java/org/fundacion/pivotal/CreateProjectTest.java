@@ -18,10 +18,10 @@ public class CreateProjectTest {
   @BeforeTest
   public void setup() {
     //Windows
-    System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
+//    System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
 
     //MacOS
-//    System.setProperty("webdriver.chrome.driver", "/Users/GualyVc/IntelliJ/chromedriver");
+    System.setProperty("webdriver.chrome.driver", "/Users/GualyVc/IntelliJ/chromedriver");
 
     driver = new ChromeDriver();
     driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -31,7 +31,7 @@ public class CreateProjectTest {
 
   @Test
   public void testCreateProject() {
-
+System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     LoginPage login = new LoginPage(driver);
 
     //Login using "User" and "Password"

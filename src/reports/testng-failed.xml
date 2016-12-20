@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [SuiteB]">
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  <test name="TestNameB(failed)">
+    <classes>
+      <class name="org.fundacion.pivotal.ModifyProjectTest">
+        <methods>
+          <include name="setup"/>
+          <include name="close"/>
+          <include name="testCreateProject"/>
+        </methods>
+      </class> <!-- org.fundacion.pivotal.ModifyProjectTest -->
+    </classes>
+  </test> <!-- TestNameB(failed) -->
+</suite> <!-- Failed suite [SuiteB] -->

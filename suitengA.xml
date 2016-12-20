@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<suite name="Suite">
+<suite name="SuiteA">
     <listeners>
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     </listeners>
-    <test name="PivotalTrackerTest">
+    <test name="TestNameA">
         <classes>
             <class name="org.fundacion.pivotal.CreateProjectTest"/>
-            <class name="org.fundacion.pivotal.ModifyProjectTest"/>
+
         </classes>
     </test>
 </suite>

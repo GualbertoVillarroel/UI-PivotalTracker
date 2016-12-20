@@ -18,10 +18,10 @@ public class ModifyProjectTest {
   @BeforeTest
   public void setup() {
     //Windows
-    System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
+//    System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
 
     //MacOS
-//    System.setProperty("webdriver.chrome.driver", "/Users/GualyVc/IntelliJ/chromedriver");
+    System.setProperty("webdriver.chrome.driver", "/Users/GualyVc/IntelliJ/chromedriver");
 
     driver = new ChromeDriver();
 
@@ -32,7 +32,7 @@ public class ModifyProjectTest {
 
   @Test
   public void testCreateProject() {
-
+    System.out.println("BBBBBBBBBBBBBBBBBBBBBBBBBB");
     LoginPage login = new LoginPage(driver);
 
     //Login using "User" and "Password"
